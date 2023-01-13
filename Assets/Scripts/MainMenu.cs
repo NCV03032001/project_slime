@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
 	}
     public void PlayGame()
     {
-        SceneManager.LoadScene("StageSelect");
+        SceneManager.LoadScene("StageMenu");
     }
     public void SettingsMenu()
     {
