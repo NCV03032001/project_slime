@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - Enemy
-  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -20,7 +19,7 @@ TagManager:
   - Wall
   - Player
   - Enemy
-  - 
+  - Projectiles
   - 
   - 
   - 

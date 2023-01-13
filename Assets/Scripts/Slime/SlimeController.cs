@@ -98,7 +98,7 @@ public class SlimeController : MonoBehaviour
         {    
             slime.velocity= new Vector2(slime.velocity.x, jumpHeight);
         }
-        print(isGrounded);
+        //print(isGrounded);
         if (slime.velocity.y <= 0)
         {
             slime.gravityScale = 4;
@@ -110,5 +110,13 @@ public class SlimeController : MonoBehaviour
         anim.SetFloat("speed", Mathf.Abs(slime.velocity.x));
         anim.SetBool("isGround", isGrounded);
 
+    }
+
+    public bool canAttack()
+    {
+        if (mana > 0)
+            return true;
+
+        return false;
     }
 }
