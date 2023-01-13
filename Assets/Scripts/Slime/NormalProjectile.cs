@@ -32,9 +32,7 @@ public class NormalProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            print(collision.tag);
+        if (collision.tag == "Player") {
             return;
         }
         hit = true;

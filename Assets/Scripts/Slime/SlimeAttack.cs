@@ -21,7 +21,7 @@ public class SlimeAttack : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Z) && cooldownTimer > attackCooldown && playerMovement.canAttack()
+        if (Input.GetKey(KeyCode.C) && cooldownTimer > attackCooldown && playerMovement.canAttack()
             && Time.timeScale > 0)
             Attack();
         cooldownTimer += Time.deltaTime;
