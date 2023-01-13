@@ -448,8 +448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
-  iFramesDuration: 0
-  numberOfFlashes: 0
+  iFramesDuration: 1
+  numberOfFlashes: 2
   components: []
   deathSound: {fileID: 0}
   hurtSound: {fileID: 0}
@@ -4691,6 +4691,7 @@ GameObject:
   - component: {fileID: 1333897193}
   - component: {fileID: 1333897197}
   - component: {fileID: 1333897196}
+  - component: {fileID: 1333897198}
   m_Layer: 11
   m_Name: skeleton-idle1
   m_TagString: Enemy
@@ -4832,6 +4833,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1333897198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333897192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c550e6382a010214fbfbabcadf58feb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1356522267
 GameObject:
   m_ObjectHideFlags: 0
