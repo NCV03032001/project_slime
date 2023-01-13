@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlimeController : MonoBehaviour
 {
     public int hp;
-    public int maxHp = 100;
+    public int maxHp = 5;
 
     public int atk;
     public int maxAtk = 100;
