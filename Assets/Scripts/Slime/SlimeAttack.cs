@@ -7,6 +7,7 @@ public class SlimeAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] norPros;
+    [SerializeField] private AudioClip norProsound;
 
     private Animator anim;
     private SlimeController playerMovement;
@@ -29,7 +30,7 @@ public class SlimeAttack : MonoBehaviour
 
     private void Attack()
     {
-        //SoundManager.instance.PlaySound(norProsound);
+        SoundManager.instance.PlaySound(norProsound);
         anim.SetTrigger("attack");
         cooldownTimer = 0;
 

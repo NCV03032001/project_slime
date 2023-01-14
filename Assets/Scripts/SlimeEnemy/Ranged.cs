@@ -42,7 +42,8 @@ public class Ranged : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-                anim.SetTrigger("rangedAttack");
+                anim.SetTrigger("attack");
+                RangedAttack();
             }
         }
 
@@ -55,7 +56,7 @@ public class Ranged : MonoBehaviour
         SoundManager.instance.PlaySound(fireballSound);
         cooldownTimer = 0;
         fireballs[FindFireball()].transform.position = firepoint.position;
-        fireballs[FindFireball()].GetComponent<EnemyProjectile>().ActivateProjectile();
+        fireballs[FindFireball()].GetComponent<SlimeEnemyProjectile>().ActivateProjectile();
     }
     private int FindFireball()
     {

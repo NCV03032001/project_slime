@@ -1,19 +1,19 @@
 using UnityEngine;
 
-public class EnemyProjectile : EnemyDamage
+public class SlimeEnemyProjectile : EnemyDamage
 {
     [SerializeField] private float speed;
     [SerializeField] private float resetTime;
     private float lifetime;
     private Animator anim;
-    private BoxCollider2D coll;
+    private CircleCollider2D coll;
 
     private bool hit;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<CircleCollider2D>();
     }
 
     public void ActivateProjectile()
@@ -36,6 +36,8 @@ public class EnemyProjectile : EnemyDamage
 
     private new void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Enemy")
+            return;
         hit = true;
         base.OnTriggerEnter2D(collision); //Execute logic from parent script first
         coll.enabled = false;

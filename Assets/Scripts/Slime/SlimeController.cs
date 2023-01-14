@@ -20,7 +20,6 @@ public class SlimeController : MonoBehaviour
 
     public float jumpHeight = 20f;
     public float fallSpeed = 8f;
-    private bool isJumping= false;
 
     public int gold = 0;
 
@@ -33,6 +32,8 @@ public class SlimeController : MonoBehaviour
     public float groundCheckRadius = 1f;
     public LayerMask groundLayer;
     private bool isGrounded= true;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip jumpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -95,7 +96,8 @@ public class SlimeController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && isGrounded)
         //if (Input.GetButtonDown("Jump"))
-        {    
+        {
+            SoundManager.instance.PlaySound(jumpSound);
             slime.velocity= new Vector2(slime.velocity.x, jumpHeight);
         }
         //print(isGrounded);
@@ -108,7 +110,7 @@ public class SlimeController : MonoBehaviour
             slime.velocity += Vector2.up * Physics2D.gravity.y * (5f - 1) * Time.deltaTime;
         }*/
         anim.SetFloat("speed", Mathf.Abs(slime.velocity.x));
-        anim.SetBool("isGround", isGrounded);
+        anim.SetBool("grounded", isGrounded);
 
     }
 
