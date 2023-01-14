@@ -37,22 +37,22 @@ public class Health : MonoBehaviour
         {
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
-            //SoundManager.instance.PlaySound(hurtSound);
+            SoundManager.instance.PlaySound(hurtSound);
         }
         else
         {
             if (!dead)
             {
-                //Deactivate all attached component classes
-                foreach (Behaviour component in components)
-                    component.enabled = false;
-
                 anim.SetBool("grounded", true);
                 anim.SetTrigger("die");
 
                 dead = true;
                 //GetComponent<SlimeController>().enabled=false;
-                //SoundManager.instance.PlaySound(deathSound);
+                SoundManager.instance.PlaySound(deathSound);
+
+                //Deactivate all attached component classes
+                foreach (Behaviour component in components)
+                    component.enabled = false;
             }
         }
     }
